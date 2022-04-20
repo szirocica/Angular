@@ -1,0 +1,42 @@
+
+<form [formGroup]="tileForm" (ngSubmit)="onSubmit()" novalidate>
+    <div>
+        <mat-form-field appearance="fill">
+        <label>Name</label>
+        <input matInput type="text" formControlName="name" placeholder="Full Name" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+        <label>Email</label>
+        <input matInput type="email" formControlName="email" placeholder="Email" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+        <label for="name">Tile Size</label>
+        <select formControlName="student_course" placeholder="" required>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+            <option value="ExtraLarge">Extra Large</option>
+        </select>
+    </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field appearance="fill">
+        <label>Cost</label>
+        <input matInput type="number" formControlName="fees" placeholder="Cost" required>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <button mat-button color="accent" type="submit" [disabled]="!tileForm.valid">Create</button>
+        &nbsp; &nbsp; &nbsp;
+        <button mat-button color="accent" type="reset">Reset</button>
+    </div>
+
+</form>

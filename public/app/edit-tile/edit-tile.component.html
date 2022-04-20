@@ -1,0 +1,43 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div>
+        <label>Name</label>
+        <input type="text" formControlName="name" required>
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="Email" required>
+    </div>
+
+    <div>
+        <label for="name">Tile Size</label>
+        <select formControlName="student_course" placeholder="" required>
+            <option value="Small" selected>Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+            <option value="ExtraLarge">Extra Large</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Cost</label>
+        <input type="text" formControlName="fees" required>
+    </div>
+
+    <div>
+        <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Option 1</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+          </mat-radio-group>
+    </div>
+
+    <div>
+        <button  mat-fab color="primary" type="submit">Update</button>
+        &nbsp; &nbsp; &nbsp;
+        <button  mat-fab color="warn" type="reset">Reset</button>
+    </div>
+
+
+</form>

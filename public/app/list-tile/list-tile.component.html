@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+     <tr>
+         <th scope="col">#</th>
+         <th scope="col">Name</th>
+         <th scope="col">Email</th>
+         <th scope="col">Size</th>
+         <th scope="col">Cost</th>
+         <th scope="col">Action (Delete/Update)</th>
+     </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tile of Tile; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ tile.name }}</td>
+            <td>{{ tile.email }}</td>
+            <td>{{ tile.student_course }}</td>
+            <td>{{ tile.fees }}</td>
+
+            <td>
+                <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                    <span (click)="removeTile(tile)" ><mat-icon>delete</mat-icon></span>
+                </button>
+
+                <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <span routerLink="/update-tile/{{ tile.id }}" ><mat-icon>settings</mat-icon></span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
